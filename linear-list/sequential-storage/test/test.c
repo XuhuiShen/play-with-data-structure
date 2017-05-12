@@ -24,8 +24,9 @@ unit_test(test_get_element)
 	}
 }
 
-// test design: you can print all list element to a file,
-// and compare result using bash. ↓ is not a good test example.
+/* test design: you can print all list elements to a file, */
+/* and compare result with the expected output using bash. */
+/* ↓ is not a good test example. */
 unit_test(test_insert_element)
 {
 	unit_test_init();
