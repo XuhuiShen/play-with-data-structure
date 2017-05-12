@@ -23,4 +23,14 @@ unit_test(test_get_element)
 	}
 }
 
+unit_test(test_insert_element)
+{
+	int i;
+	element_type e = 0;
+	for (i = 0; i < l.length; i++) {
+		get_element(l, i, &e);
+		test_assert(e == i + 1);
+	}
+}
+
 test_file_end
