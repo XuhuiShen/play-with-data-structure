@@ -1,3 +1,4 @@
+#include <stdio.h>
 #define MAXSIZE 20
 
 typedef int element_type;
