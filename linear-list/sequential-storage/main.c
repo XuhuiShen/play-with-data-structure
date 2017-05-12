@@ -14,3 +14,19 @@ int get_element(sequential_list l, int i, element_type *e)
 	*e = l.data[i - 1];
 	return 0;
 }
+
+int insert_element(sequential_list *l, int i, element_type e)
+{
+	int j = 0;
+	if (l->length == MAXSIZE)
+		return -1;
+	if (i < 1 || i > l->length + 1)
+		return -1;
+	if (i <= l->length) {
+		for (j = l->length - 1; j >= i - 1; j--)
+			l->data[j + 1] = l->data[j];
+	}
+	l->data[i - 1] = e;
+	l->length++;
+	return 0;
+}
