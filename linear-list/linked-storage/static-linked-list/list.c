@@ -29,6 +29,12 @@ int malloc_sll(static_link_list space)
 	return i;
 }
 
+void free_ssl(static_link_list space, int k)
+{
+	space[k].cur = space[0].cur;
+	space[0].cur = k;
+}
+
 int list_length(static_link_list l)
 {
 	int j = 0;
