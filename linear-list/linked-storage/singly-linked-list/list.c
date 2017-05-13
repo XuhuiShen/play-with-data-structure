@@ -16,7 +16,7 @@ int get_element(link_list l, int i, element_type *e)
 	int j;
 	for (j = 1; p && j < i; j++)
 		p = p->next;
-	if (!p || j > 1)
+	if (!p || j > i)
 		return -1;
 	*e = p->data;
 	return 0;
