@@ -96,7 +96,7 @@ int clear_list(link_list *l)
 	node *p, *q;
 	p = (*l)->next;
 
-	for (*p) {
+	while (p) {
 		q = p->next;
 		free(p);
 		p = q;
