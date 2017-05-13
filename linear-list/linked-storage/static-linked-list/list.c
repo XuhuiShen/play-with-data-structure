@@ -3,10 +3,11 @@
 
 typedef int element_type;
 
+
 typedef struct {
 	element_type data;
 	int cur;
-} component, static_link_list[MAXSIZE];
+} static_link_list[MAXSIZE];
 
 int init(static_link_list space)
 {
@@ -26,4 +27,33 @@ int malloc_sll(static_link_list space)
 		space[0].cur = space[i].cur;
 
 	return i;
+}
+
+int list_length(static_link_list l)
+{
+	int j = 0;
+	int i = l[MAXSIZE - 1].cur;
+	while (i) {
+		i = l[i].cur;
+		j++;
+	}
+	return j;
+}
+
+int insert_element(static_link_list l, int i, element_type e)
+{
+	int j, k, m;
+	k = MAXSIZE - 1;
+	if (i < 1 || i > list_length(l) + 1)
+		return -1;
+	j = malloc_sll(l);
+	if (j) {
+		l[j].data = e;
+		for (m = 1; m <= i - 1; m++)
+			k = l[k].cur;
+		l[j].cur = l[k].cur;
+		l[k].cur = j;
+		return 0;
+	}
+	return -1;
 }
