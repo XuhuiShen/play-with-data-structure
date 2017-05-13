@@ -63,3 +63,18 @@ int insert_element(static_link_list l, int i, element_type e)
 	}
 	return -1;
 }
+
+int delete_element(static_link_list l, int i)
+{
+	int j, k;
+	if (i < 1 || i > list_length(l))
+		return -1;
+	k = MAXSIZE - 1;
+	for (j = 1; j <= i - 1; j++)
+		k = l[k].cur;
+	j = l[k].cur;
+	l[k].cur = l[j].cur;
+	free_ssl(l, j);
+
+	return 0;
+}
