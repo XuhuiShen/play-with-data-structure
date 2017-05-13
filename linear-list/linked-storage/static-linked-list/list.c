@@ -17,3 +17,13 @@ int init(static_link_list space)
 
 	return 0;
 }
+
+int malloc_sll(static_link_list space)
+{
+	int i = space[0].cur;
+
+	if (space[0].cur)
+		space[0].cur = space[i].cur;
+
+	return i;
+}
