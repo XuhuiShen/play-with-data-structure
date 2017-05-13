@@ -4,6 +4,13 @@
 
 sequential_list l;
 
+void print_list()
+{
+	int i;
+	for (i = 0; i < l.length; i++)
+		printf("%d\n", l.data[i]);
+}
+
 int unit_test_init()
 {
 	l.length = MAXSIZE - 1;
@@ -31,11 +38,11 @@ unit_test(test_insert_element)
 {
 	unit_test_init();
 	int i = 5;
-	element_type insert_e = 666;
-	element_type get_e;
-	insert_element(&l, i, insert_e);
-	get_element(l, i, &get_e);
-	test_assert(get_e == insert_e);
+	element_type i_e = 666;
+	element_type g_e = 0;
+	insert_element(&l, i, i_e);
+	get_element(l, i, &g_e);
+	test_assert(g_e == i_e);
 }
 
 test_file_end
