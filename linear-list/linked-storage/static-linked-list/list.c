@@ -3,7 +3,6 @@
 
 typedef int element_type;
 
-
 typedef struct {
 	element_type data;
 	int cur;
