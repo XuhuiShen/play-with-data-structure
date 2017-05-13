@@ -90,3 +90,18 @@ void create_list_tail_insert(link_list *l, int n)
 	}
 	r->next = NULL;
 }
+
+int clear_list(link_list *l)
+{
+	node *p, *q;
+	p = (*l)->next;
+
+	for (*p) {
+		q = p->next;
+		free(p);
+		p = q;
+	}
+	(*l)->next = NULL;
+
+	return 0;
+}
