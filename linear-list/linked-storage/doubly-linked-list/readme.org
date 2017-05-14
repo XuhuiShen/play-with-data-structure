@@ -1,0 +1,6 @@
+* some useful function name trick.
+** functions ("__xxx")
+   Some of the internal functions ("__xxx") are useful when manipulating whole lists
+   rather than single entries, as sometimes we already know the next/prev entries and
+   we can generate better code by using them directly rather than using the generic
+   single-entry routines. (entries means a specific node, such as head node or tail node)
