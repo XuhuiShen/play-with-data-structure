@@ -12,7 +12,7 @@ struct link_stack {
 	int conut;
 };
 
-static int empty(link_stack *s)
+static inline int empty(link_stack *s)
 {
 	if (s->top == NULL)
 		return 1;
