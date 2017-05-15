@@ -2,4 +2,4 @@
 In fact, the use of such a data structure, usually when the two stack space requirements have the opposite relationship.
 Like buying and selling stocks, when you buy, there must be somebody who is doing the sell operation. Some people make money,
 it must be someone to lose money. So that the use of two stacks of shared space storage method has a relatively large significance.
-Otherwise the two stacks are constantly growing, it will soon overflow due to the overflow.
+Otherwise the two stacks are constantly growing, it will soon overflow.
