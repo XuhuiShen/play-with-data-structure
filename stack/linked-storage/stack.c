@@ -12,26 +12,33 @@ struct link_stack {
 	int conut;
 };
 
-int empty(link_stack *s)
+static inline int empty(link_stack *s)
 {
 	if (s->top == NULL)
 		return 1;
 	return 0;
 }
 
-int push(link_stack *s, element_type e)
+static int push(link_stack *s, element_type e)
 {
-	node *n = malloc(sizeof(node));
-	n->data = e;
-	n->next = s->top;
-	s->top = n;
+	node *p = malloc(sizeof(node));
+	p->data = e;
+	p->next = s->top;
+	s->top = p;
 	s->conut++;
 
 	return 0;
 }
 
-int pop(link_stack *s, element_type *e)
+static int pop(link_stack *s, element_type *e)
 {
-	node *p;
-	if ()
+	if (empty(s))
+		return -1;
+	*e = s->top->data;
+	node *p	= s->top;
+	s->top = s->top->next;
+	free(p);
+	s->conut--;
+
+	return 0;
 }
