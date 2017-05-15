@@ -2,26 +2,26 @@
 
 typedef int element_type;
 
-struct node {
+typedef struct {
 	element_type data;
-	struct node *next;
-};
+	struct node_t *next;
+} node_t;
 
-struct link_stack {
-	node *top;
+typedef struct {
+	node_t *top;
 	int conut;
-};
+} link_stack_t;
 
-static inline int empty(link_stack *s)
+static inline int empty(link_stack_t *s)
 {
 	if (s->top == NULL)
 		return 1;
 	return 0;
 }
 
-static int push(link_stack *s, element_type e)
+static int push(link_stack_t *s, element_type e)
 {
-	node *p = malloc(sizeof(node));
+	node_t *p = malloc(sizeof(node_t));
 	p->data = e;
 	p->next = s->top;
 	s->top = p;
@@ -30,12 +30,12 @@ static int push(link_stack *s, element_type e)
 	return 0;
 }
 
-static int pop(link_stack *s, element_type *e)
+static int pop(link_stack_t *s, element_type *e)
 {
 	if (empty(s))
 		return -1;
 	*e = s->top->data;
-	node *p	= s->top;
+	node_t *p = s->top;
 	s->top = s->top->next;
 	free(p);
 	s->conut--;

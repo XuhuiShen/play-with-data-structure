@@ -2,7 +2,7 @@
 #include <unit_test.h>
 #include <../stack.c>
 
-sequential_stack s;
+sequential_stack_t s;
 
 void print_stack()
 {
