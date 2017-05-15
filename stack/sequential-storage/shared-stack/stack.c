@@ -9,7 +9,7 @@ typedef struct {
 } sequential_double_stack;
 
 /* stack_number means which stack you want to push. */
-int push(sequential_double_stack *s, element_type e, int stack_number)
+static int push(sequential_double_stack *s, element_type e, int stack_number)
 {
 	if (s->top1 + 1 == s->top2)
 		return -1;
@@ -20,7 +20,7 @@ int push(sequential_double_stack *s, element_type e, int stack_number)
 	return 0;
 }
 
-int pop(sequential_double_stack *s, element_type *e, int stack_number)
+static int pop(sequential_double_stack *s, element_type *e, int stack_number)
 {
 	if (s->top1 == -1 && s->top2 == MAXSIZE)
 		return -1;

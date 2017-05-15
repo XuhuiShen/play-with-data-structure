@@ -7,7 +7,7 @@ typedef struct {
 	int top;
 } sequential_stack;
 
-int push(sequential_stack *s, element_type e)
+static int push(sequential_stack *s, element_type e)
 {
 	if (s->top == MAXSIZE - 1)
 		return -1;
@@ -17,7 +17,7 @@ int push(sequential_stack *s, element_type e)
 	return 0;
 }
 
-int pop(sequential_stack *s, element_type *e)
+static int pop(sequential_stack *s, element_type *e)
 {
 	if (s->top == -1) 	/* when stack is empty, set top to -1 */
 		return -1;	/* when stack has only one element, set top to 0 */

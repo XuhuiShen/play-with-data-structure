@@ -11,7 +11,7 @@ typedef struct node {
 
 typedef struct node *link_list;
 
-int get_element(link_list l, int i, element_type *e)
+static int get_element(link_list l, int i, element_type *e)
 {
 	node *p;
 	p = l->next;
@@ -25,7 +25,7 @@ int get_element(link_list l, int i, element_type *e)
 	return 0;
 }
 
-int insert_element(link_list *l, int i, element_type e)
+static int insert_element(link_list *l, int i, element_type e)
 {
 	node *p, *s;
 	p = *l;
@@ -42,7 +42,7 @@ int insert_element(link_list *l, int i, element_type e)
 	return 0;
 }
 
-int delete_element(link_list *l, int i, element_type *e)
+static int delete_element(link_list *l, int i, element_type *e)
 {
 	node *p, *q;
 	p = *l;
@@ -60,7 +60,7 @@ int delete_element(link_list *l, int i, element_type *e)
 }
 
 /* Establishing a list which has lead node and random value of elements. */
-void create_list_head_insert(link_list *l, int n)
+static void create_list_head_insert(link_list *l, int n)
 {
 	node *p;
 	int i;
@@ -75,7 +75,7 @@ void create_list_head_insert(link_list *l, int n)
 	}
 }
 
-void create_list_tail_insert(link_list *l, int n)
+static void create_list_tail_insert(link_list *l, int n)
 {
 	node *p;
 	int i;
@@ -91,7 +91,7 @@ void create_list_tail_insert(link_list *l, int n)
 	r->next = NULL;
 }
 
-int clear_list(link_list *l)
+static int clear_list(link_list *l)
 {
 	node *p, *q;
 	p = (*l)->next;

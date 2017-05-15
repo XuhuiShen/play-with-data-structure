@@ -8,7 +8,7 @@ typedef struct {
 	int length;
 } sequential_list;
 
-int get_element(sequential_list l, int i, element_type *e)
+static inline int get_element(sequential_list l, int i, element_type *e)
 {
 	if (l.length == 0 || i > l.length)
 		return -1;
@@ -17,7 +17,7 @@ int get_element(sequential_list l, int i, element_type *e)
 	return 0;
 }
 
-int insert_element(sequential_list *l, int i, element_type e)
+static int insert_element(sequential_list *l, int i, element_type e)
 {
 	int j = 0;
 	if (l->length == MAXSIZE)
@@ -34,7 +34,7 @@ int insert_element(sequential_list *l, int i, element_type e)
 	return 0;
 }
 
-int delete_element(sequential_list *l, int i, element_type *e)
+static int delete_element(sequential_list *l, int i, element_type *e)
 {
 	int j = 0;
 	if (l->length == 0)

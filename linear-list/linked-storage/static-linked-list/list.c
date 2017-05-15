@@ -8,7 +8,7 @@ typedef struct {
 	int cur;
 } static_link_list[MAXSIZE];
 
-int init(static_link_list space)
+static inline int init(static_link_list space)
 {
 	int i;
 	for (i = 0; i < MAXSIZE; i++)
@@ -18,7 +18,7 @@ int init(static_link_list space)
 	return 0;
 }
 
-int malloc_sll(static_link_list space)
+static inline int malloc_sll(static_link_list space)
 {
 	int i = space[0].cur;
 
@@ -28,13 +28,13 @@ int malloc_sll(static_link_list space)
 	return i;
 }
 
-void free_ssl(static_link_list space, int k)
+static inline void free_ssl(static_link_list space, int k)
 {
 	space[k].cur = space[0].cur;
 	space[0].cur = k;
 }
 
-int list_length(static_link_list l)
+static int list_length(static_link_list l)
 {
 	int j = 0;
 	int i = l[MAXSIZE - 1].cur;
@@ -45,7 +45,7 @@ int list_length(static_link_list l)
 	return j;
 }
 
-int insert_element(static_link_list l, int i, element_type e)
+static int insert_element(static_link_list l, int i, element_type e)
 {
 	int j, k, m;
 	k = MAXSIZE - 1;
@@ -63,7 +63,7 @@ int insert_element(static_link_list l, int i, element_type e)
 	return -1;
 }
 
-int delete_element(static_link_list l, int i)
+static int delete_element(static_link_list l, int i)
 {
 	int j, k;
 	if (i < 1 || i > list_length(l))
