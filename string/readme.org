@@ -1,4 +1,4 @@
 * I will focus on string library function.
-  The logical structure of the string is very similar to the linear table, except that the string data object is constrained to the character set.
-  However, the basic operation of the string and the basic operation of the linear table are very different. In the operation of the linear table,
+  The logical structure of the string is very similar to the linear list, except that the string data object is constrained to the character set.
+  However, the basic operation of the string and the basic operation of the linear list are very different. In the operation of the linear list,
   mostly use the "single element" as the operation of the object, and the basic operation of the string is usually "substring" as the operation of the object.
