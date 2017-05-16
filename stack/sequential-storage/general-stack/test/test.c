@@ -24,7 +24,7 @@ int unit_test_init()
 unit_test(test_pop)
 {
 	unit_test_init();
-	element_type e = 0;
+	element_type_t e = 0;
 	int i;
 	for (i = 0; i < MAXSIZE; i++) {
 		pop(&s, &e);

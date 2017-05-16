@@ -1,10 +1,10 @@
 #include <stdio.h>
 #define MAXSIZE 20
 
-typedef int element_type;
+typedef int element_type_t;
 
 typedef struct {
-	element_type data[MAXSIZE];
+	element_type_t data[MAXSIZE];
 	int front;
 	int rear;
 } sequential_queue_t;
@@ -22,7 +22,7 @@ static inline int queue_length(sequential_queue_t q)
 	return (q.rear - q.front + MAXSIZE) % MAXSIZE;
 }
 
-static int en_queue(sequential_queue_t *q, element_type e)
+static int en_queue(sequential_queue_t *q, element_type_t e)
 {
 
 }
