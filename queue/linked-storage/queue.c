@@ -12,7 +12,7 @@ typedef struct {
 	queue_node_t *rear;
 } link_queue_t;
 
-int en_queue(link_queue_t *q, element_type_t e)
+static int en_queue(link_queue_t *q, element_type_t e)
 {
 	queue_node_t *s = (queue_node_t *)malloc(sizeof(queue_node_t));
 	if (!s)
@@ -25,7 +25,7 @@ int en_queue(link_queue_t *q, element_type_t e)
 	return 0;
 }
 
-int de_queue(link_queue_t *q, element_type_t *e)
+static int de_queue(link_queue_t *q, element_type_t *e)
 {
 	queue_node_t *p;
 	if (q->front == q->rear)
