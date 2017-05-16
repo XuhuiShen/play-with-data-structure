@@ -4,9 +4,9 @@
 
 typedef int element_type_t;
 
-typedef struct __list_node_t {
+typedef struct __list_node {
 	element_type_t data;
-	struct __list_node_t *next;
+	struct __list_node *next;
 } list_node_t;
 
 typedef list_node_t *link_list_t;
