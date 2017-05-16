@@ -24,3 +24,18 @@ int en_queue(link_queue_t *q, element_type_t e)
 
 	return 0;
 }
+
+int de_queue(link_queue_t *q, element_type_t *e)
+{
+	queue_node_t *p;
+	if (q->front == q->rear)
+		return -1;
+	p = q->front->next;
+	*e = p->data;
+	q->front->next = p->next;
+	if (q->rear == p)
+		q->rear = q->front;
+	free(p);
+
+	return 0;
+}
