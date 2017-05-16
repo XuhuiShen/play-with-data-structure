@@ -1,14 +1,14 @@
 #include <stdio.h>
 #define MAXSIZE 20
 
-typedef int element_type;
+typedef int element_type_t;
 
 typedef struct {
-	element_type data[MAXSIZE];
+	element_type_t data[MAXSIZE];
 	int length;
-} sequential_list;
+} sequential_list_t;
 
-static inline int get_element(sequential_list l, int i, element_type *e)
+static inline int get_element(sequential_list_t l, int i, element_type_t *e)
 {
 	if (l.length == 0 || i > l.length)
 		return -1;
@@ -17,7 +17,7 @@ static inline int get_element(sequential_list l, int i, element_type *e)
 	return 0;
 }
 
-static int insert_element(sequential_list *l, int i, element_type e)
+static int insert_element(sequential_list_t *l, int i, element_type_t e)
 {
 	int j = 0;
 	if (l->length == MAXSIZE)
@@ -34,7 +34,7 @@ static int insert_element(sequential_list *l, int i, element_type e)
 	return 0;
 }
 
-static int delete_element(sequential_list *l, int i, element_type *e)
+static int delete_element(sequential_list_t *l, int i, element_type_t *e)
 {
 	int j = 0;
 	if (l->length == 0)

@@ -9,7 +9,7 @@ void print_list()
 	int i = l[MAXSIZE - 1].cur;
 	while (i) {
 		i = l[i].cur;	/* end of the list cur of node is 0 */
-		printf("%d\n", l[i]>data);
+		printf("%d\n", l[i].data);
 	}
 }
 
