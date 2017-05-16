@@ -2,18 +2,17 @@
 #include <stdlib.h>
 #include <time.h>
 
-typedef int element_type;
+typedef int element_type_t;
 
-typedef struct node {
-	element_type data;
-	struct node *next;
-} node;
+typedef struct __list_node_t {
+	element_type_t data;
+	struct __list_node_t *next;
+} list_node_t;
 
-typedef struct node *link_list;
-
-static int get_element(link_list l, int i, element_type *e)
+typedef list_node_t *link_list_t;
+static int get_element(link_list_t l, int i, element_type_t *e)
 {
-	node *p;
+	list_node_t *p;
 	p = l->next;
 	int j;
 	for (j = 1; p && j < i; j++)
@@ -25,16 +24,16 @@ static int get_element(link_list l, int i, element_type *e)
 	return 0;
 }
 
-static int insert_element(link_list *l, int i, element_type e)
+static int insert_element(link_list_t *l, int i, element_type_t e)
 {
-	node *p, *s;
+	list_node_t *p, *s;
 	p = *l;
 	int j;
 	for (j = 1; p && j < i; j++)
 		p = p->next;
 	if (!p || j > i)
 		return -1;
-	s = (node *)malloc(sizeof(node));
+	s = (list_node_t *)malloc(sizeof(list_node_t));
 	s->data = e;
 	s->next = p->next;
 	p->next = s;
@@ -42,9 +41,9 @@ static int insert_element(link_list *l, int i, element_type e)
 	return 0;
 }
 
-static int delete_element(link_list *l, int i, element_type *e)
+static int delete_element(link_list_t *l, int i, element_type_t *e)
 {
-	node *p, *q;
+	list_node_t *p, *q;
 	p = *l;
 	int j;
 	for (j = 1; p && j < i; j++)
@@ -60,30 +59,30 @@ static int delete_element(link_list *l, int i, element_type *e)
 }
 
 /* Establishing a list which has lead node and random value of elements. */
-static void create_list_head_insert(link_list *l, int n)
+static void create_list_head_insert(link_list_t *l, int n)
 {
-	node *p;
+	list_node_t *p;
 	int i;
 	srand(time(0));
-	*l = (link_list)malloc(sizeof(node));
+	*l = (link_list_t)malloc(sizeof(list_node_t));
 	(*l)->next = NULL;
 	for (i = 0; i < n; i++) {
-		p = (link_list)malloc(sizeof(node));
+		p = (link_list_t)malloc(sizeof(list_node_t));
 		p->data = rand() % 100 + 1;
 		p->next = (*l)->next;
 		(*l)->next = p;
 	}
 }
 
-static void create_list_tail_insert(link_list *l, int n)
+static void create_list_tail_insert(link_list_t *l, int n)
 {
-	node *p;
+	list_node_t *p;
 	int i;
 	srand(time(0));
-	*l = (link_list)malloc(sizeof(node));
-	node *r = *l;
+	*l = (link_list_t)malloc(sizeof(list_node_t));
+	list_node_t *r = *l;
 	for (i = 0; i < n; i++) {
-		p = (link_list)malloc(sizeof(node));
+		p = (link_list_t)malloc(sizeof(list_node_t));
 		p->data = rand() % 100 + 1;
 		r->next = p;
 		r = p;
@@ -91,9 +90,9 @@ static void create_list_tail_insert(link_list *l, int n)
 	r->next = NULL;
 }
 
-static int clear_list(link_list *l)
+static int clear_list(link_list_t *l)
 {
-	node *p, *q;
+	list_node_t *p, *q;
 	p = (*l)->next;
 
 	while (p) {

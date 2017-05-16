@@ -1,14 +1,14 @@
 #include <stdio.h>
 #define MAXSIZE 1000
 
-typedef int element_type;
+typedef int element_type_t;
 
 typedef struct {
-	element_type data;
+	element_type_t data;
 	int cur;
-} static_link_list[MAXSIZE];
+} static_link_list_t[MAXSIZE];
 
-static inline int init(static_link_list space)
+static inline int list_init(static_link_list_t space)
 {
 	int i;
 	for (i = 0; i < MAXSIZE; i++)
@@ -18,7 +18,7 @@ static inline int init(static_link_list space)
 	return 0;
 }
 
-static inline int malloc_sll(static_link_list space)
+static inline int malloc_sll(static_link_list_t space)
 {
 	int i = space[0].cur;
 
@@ -28,13 +28,13 @@ static inline int malloc_sll(static_link_list space)
 	return i;
 }
 
-static inline void free_ssl(static_link_list space, int k)
+static inline void free_ssl(static_link_list_t space, int k)
 {
 	space[k].cur = space[0].cur;
 	space[0].cur = k;
 }
 
-static int list_length(static_link_list l)
+static int list_length(static_link_list_t l)
 {
 	int j = 0;
 	int i = l[MAXSIZE - 1].cur;
@@ -45,7 +45,7 @@ static int list_length(static_link_list l)
 	return j;
 }
 
-static int insert_element(static_link_list l, int i, element_type e)
+static int insert_element(static_link_list_t l, int i, element_type_t e)
 {
 	int j, k, m;
 	k = MAXSIZE - 1;
@@ -63,7 +63,7 @@ static int insert_element(static_link_list l, int i, element_type e)
 	return -1;
 }
 
-static int delete_element(static_link_list l, int i)
+static int delete_element(static_link_list_t l, int i)
 {
 	int j, k;
 	if (i < 1 || i > list_length(l))

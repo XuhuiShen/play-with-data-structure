@@ -12,7 +12,7 @@ typedef struct {
 	int conut;
 } link_stack_t;
 
-static inline int empty(link_stack_t *s)
+static inline int stack_empty(link_stack_t *s)
 {
 	if (s->top == NULL)
 		return 1;
@@ -32,7 +32,7 @@ static int push(link_stack_t *s, element_type e)
 
 static int pop(link_stack_t *s, element_type *e)
 {
-	if (empty(s))
+	if (stack_empty(s))
 		return -1;
 	*e = s->top->data;
 	node_t *p = s->top;

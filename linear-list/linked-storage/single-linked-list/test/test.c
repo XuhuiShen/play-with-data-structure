@@ -2,11 +2,11 @@
 #include <unit_test.h>
 #include <../list.c>
 
-link_list l;
+link_list_t l;
 
 void print_list()
 {
-	node *p;
+	list_node_t *p;
 	p = l->next;
 	while (p) {
 		printf("%d\n", p->data);
@@ -16,12 +16,12 @@ void print_list()
 
 void create_test_list(int n)
 {
-	node *p;
+	list_node_t *p;
 	int i;
-	l = (link_list)malloc(sizeof(node));
+	l = (link_list_t)malloc(sizeof(list_node_t));
 	l->next = NULL;
 	for (i = 0; i < n; i++) {
-		p = (link_list)malloc(sizeof(node));
+		p = (link_list_t)malloc(sizeof(list_node_t));
 		p->data = i + 1;
 		p->next = l->next;
 		l->next = p;

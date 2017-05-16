@@ -2,7 +2,7 @@
 #include <unit_test.h>
 #include <../list.c>
 
-static_link_list l;
+static_link_list_t l;
 
 void print_list()
 {

@@ -16,3 +16,13 @@ static inline int init_queue(sequential_queue_t *q)
 
 	return 0;
 }
+
+static inline int queue_length(sequential_queue_t q)
+{
+	return (q.rear - q.front + MAXSIZE) % MAXSIZE;
+}
+
+static int en_queue(sequential_queue_t *q, element_type e)
+{
+
+}
