@@ -6,17 +6,30 @@
  * detail, please feel free to follow my WeChat Official Account "CSMorningTalk",
  * and submit your questions to me.
  */
+static void __get_next(char *pattern, int *next)
+{
+	int i = 1, j = 0;
+	next[0] = 0;
+	for (; i < strlen(pattern); i++) {
+		if (j != 0 && pattern[i] != pattern[j])
+			j = next[j - 1];
+		if (pattern[i] == pattern[j])
+			j++;
+		next[i] = j;
+	}
+}
+
 static void get_next(char *pattern, int *next)
 {
-	int i = 0, j = -1;
-	next[0] = 0;
-
-	while (i < strlen(pattern)) {
-		if (j == -1 || pattern[i] == pattern[j]) {
-			next[i] = ++j;
-			i++;
+	next[0] = -1;
+	int j = 0;
+	int i = -1;
+	while (j < strlen(pattern) - 1) {
+		if (i == -1 || pattern[j] == pattern[i]) {
+			next[++j] = ++i;
 		} else {
-			j = next[j - 1];
+			i = next[i];
 		}
+
 	}
 }
