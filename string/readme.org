@@ -2,3 +2,52 @@
   The logical structure of the string is very similar to the linear list, except that the string data object is constrained to the character set.
   However, the basic operation of the string and the basic operation of the linear list are very different. In the operation of the linear list,
   mostly use the "single element" as the operation of the object, and the basic operation of the string is usually "substring" as the operation of the object.
+
+** The more commonly-used string functions
+   *strcat* - concatenate two strings
+
+   *strchr* - string scanning operation
+
+   *strcmp* - compare two strings
+
+   *strcpy* - copy a string
+
+   *strlen* - get string length
+
+   *strncat* - concatenate one string with part of another
+
+   *strncmp* - compare parts of two strings
+
+   *strncpy* - copy part of a string
+
+   *strrchr* - string scanning operation
+
+** The less commonly-used string functions
+   *memchr* - Find a byte in memory
+
+   *memcmp* - Compare bytes in memory
+
+   *memcpy* - Copy bytes in memory
+
+   *memmove* - Copy bytes in memory with overlapping areas
+
+   *memset* - Set bytes in memory
+
+   *strcoll* - Compare bytes according to a locale-specific collating sequence
+
+   *strcspn* - Get the length of a complementary substring
+
+   *strerror* - Get error message
+
+   *strpbrk* - Scan a string for a byte
+
+   *strspn* - Get the length of a substring
+
+   *strstr* - Find a substring
+
+   *strtok* - Split a string into tokens
+
+   *strxfrm* - Transform string
+
+** KMP algorithm
+   It is a little hard for me to implement. I think I fully understand the algorithm idea, but I can't implement it correctly. Sometime result is right, sometime not. I am confused. If you can fix the bug, feel free to commit a pull-request to this project. Love you, love the world.
