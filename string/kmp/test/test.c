@@ -2,6 +2,7 @@
 #include <unit_test.h>
 #include <../kmp.c>
 
+void get_next(char *pattern, int *next);
 static void print_next(char *pattern, int *next)
 {
 	int i;
@@ -11,10 +12,14 @@ static void print_next(char *pattern, int *next)
 
 unit_test(test_get_next)
 {
-	char *s = "ababaaaba";
-	int next[strlen(s)];
-	get_next(s, next);
-	print_next(s, next);
+	char *p = "accaaaba";
+	int next[strlen(p)];
+	get_next(p, next);
+	print_next(p, next);
+
+	char *s = "ccaaccaaabanxsae";
+	int pos = kmp(s, p, 0);
+	printf("pos is: %d\n", pos);
 }
 
 test_file_end
