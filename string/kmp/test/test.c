@@ -12,13 +12,13 @@ static void print_next(char *pattern, int *next)
 
 unit_test(test_get_next)
 {
-	char *p = "accaaaba";
+	char *p = "xsae";
 	int next[strlen(p)];
 	get_next(p, next);
 	print_next(p, next);
 
 	char *s = "ccaaccaaabanxsae";
-	int pos = kmp(s, p, 0);
+	int pos = kmp(s, p);
 	printf("pos is: %d\n", pos);
 }
 
