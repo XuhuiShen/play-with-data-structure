@@ -10,6 +10,7 @@ char *strcpy(char *s1, const char *s2)
 	return s1;
 }
 
+/* strlen is size of string length, exclude '\0' */
 int main()
 {
 	char *s1 = "hello";
