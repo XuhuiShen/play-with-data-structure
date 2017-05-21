@@ -7,7 +7,7 @@ char *_strchr(const char *s, int c)
 	while (*s != '\0' && *s != ch)
 		s++;
 
-	return (*s == ch) ? (char *) s : NULL;
+	return (*s == ch) ? (char *)s : NULL;
 }
 
 int main()
