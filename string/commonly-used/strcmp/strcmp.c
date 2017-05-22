@@ -23,4 +23,6 @@ int main()
 	printf("s1 compared with s2 r = %d\n", r);
 	r = strcmp(s2, s1);
 	printf("s2 compared with s1 r = %d\n", r);
+
+	return 0;
 }
