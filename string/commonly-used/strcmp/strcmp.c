@@ -1,4 +1,5 @@
 #include <string.h>
+#include <stdio.h>
 
 int strcmp(const char *s1, const char *s2)
 {
@@ -16,6 +17,10 @@ int strcmp(const char *s1, const char *s2)
 
 int main()
 {
-
-	strcmp();
+	char *s1 = "apple";
+	char *s2 = "belly";
+	int r = strcmp(s1, s2);
+	printf("s1 compared with s2 r = %d\n", r);
+	r = strcmp(s2, s1);
+	printf("s2 compared with s1 r = %d\n", r);
 }
