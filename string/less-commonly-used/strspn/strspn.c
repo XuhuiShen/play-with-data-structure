@@ -14,7 +14,6 @@ int main()
 {
 	char *s1 = "apple";
 	char *s2 = "applx";
-	strspn(s1, s2);
 	int n = _strspn(s1, s2);
 	printf("%d\n", n);
 

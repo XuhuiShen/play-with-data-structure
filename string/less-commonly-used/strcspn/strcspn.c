@@ -1,6 +1,7 @@
 #include <string.h>
 #include <stdio.h>
 
+/* find complementary */
 size_t _strcspn(const char *s1, const char *s2)
 {
 	const char *sc1;
@@ -12,8 +13,8 @@ size_t _strcspn(const char *s1, const char *s2)
 
 int main()
 {
-	char *s1 = "iphone 7";
-	char *s2 = "12g";
+	char *s1 = "iphone 3gs";
+	char *s2 = "fuck8g";
 	int n = _strcspn(s1, s2);
 	printf("%d\n", n);
 
