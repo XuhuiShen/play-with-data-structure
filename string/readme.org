@@ -50,4 +50,4 @@
    *strxfrm* - Transform string
 
 ** KMP algorithm
-   It is a little hard for me to implement. I think I fully understand the algorithm idea, but I can't implement it correctly. Sometime result is right, sometime not. I am confused. If you can fix the bug, feel free to commit a pull-request to this project. Love you, love the world.
+   It is a little hard for me to implement this algorithm. I think I fully understand the algorithm idea, but I can't implement it correctly. Sometime result is right, sometime not. I am confused. If you can fix the bug, feel free to commit a pull-request to this project. Love you, love the world.
