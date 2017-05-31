@@ -3,12 +3,12 @@
 
 typedef int element_type_t;
 
-typedef struct __pt_node {
+typedef struct __node {
 	element_type_t data;
 	int parent;
-} pt_node_t;
+} node_t;
 
 typedef struct {
-	pt_node_t nodes[MAX_TREE_SIZE];
+	node_t nodes[MAX_TREE_SIZE];
 	int r, n;
-} p_tree;
+} tree_t;
