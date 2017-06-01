@@ -10,8 +10,7 @@ typedef int element_type_t;
  *    /     \
  *   D       E
  *
- * data storage map:
- * [A][B][C][D][E]
+ * data storage map: [A][B][C][D][E]
  */
 element_type_t complete_binary_tree[MAX_TREE_SIZE];
 
@@ -22,7 +21,6 @@ element_type_t complete_binary_tree[MAX_TREE_SIZE];
  *          \
  *           D
  *
- * data storage map:
- * [A][B][C][^][D]
+ * data storage map: [A][B][C][^][D]
  */
 element_type_t tree[MAX_TREE_SIZE];
