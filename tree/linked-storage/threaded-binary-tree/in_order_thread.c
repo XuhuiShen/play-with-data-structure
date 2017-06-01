@@ -11,9 +11,9 @@ void in_order_thread(node_t *tree)
 		tree->ltag = thread;
 		tree->lchild = pre;
 	}
-	if (!tree->rchild) {
-		tree->rtag = thread;
-		tree->rchild = pre;
+	if (!pre->rchild) {
+		pre->rtag = thread;
+		pre->rchild = tree;
 	}
 	pre = tree;
 	in_order_thread(tree->lchild);
