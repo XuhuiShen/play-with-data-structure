@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "../linked-storage/binary-search-tree/tree.c"
+#include "../linked-storage/binary-tree/tree.c"
 
 void create_tree(node_t *tree)
 {
