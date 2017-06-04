@@ -24,7 +24,7 @@ static inline int queue_length(sequential_queue_t q)
 
 static int en_queue(sequential_queue_t *q, element_type_t e)
 {
-	if ((q->rear + 1) % MAXSIZE == q->front) /* stack is full */
+	if ((q->rear + 1) % MAXSIZE == q->front) /* queue is full */
 		return -1;
 	q->data[q->rear] = e;
 	q->rear = (q->rear + 1) % MAXSIZE;
